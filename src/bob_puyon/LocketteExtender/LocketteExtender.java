@@ -13,21 +13,19 @@ public class LocketteExtender extends JavaPlugin {
 
 		@Override
 		public void onEnable() {
-			//コマンド「powcmd」を登録（詳しい動作は引数で捌く）
-			//getCommand("powcmd").setExecutor(new TransactionListener(this));
 
-			//イベントリスナーの登録
+			// イベントリスナーの登録
 			TransactionListener tl = new TransactionListener(this);
 			getServer().getPluginManager().registerEvents( tl, this);
 
-			//起動メッセージ
+			// 起動メッセージ
 			PluginDescriptionFile file_pdf = this.getDescription();
 			logger.info("[" +file_pdf.getName()+ "] v" + file_pdf.getVersion() + " is enabled!");
 		}
 
 		@Override
 		public void onDisable() {
-			//停止メッセージ
+			// 停止メッセージ
 			PluginDescriptionFile file_pdf = this.getDescription();
 			logger.info("[" +file_pdf.getName()+ "] v" + file_pdf.getVersion() + " is disabled!");
 		}
